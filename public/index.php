@@ -7,6 +7,8 @@ $rota = $rota[0];
 require_once '../src/controller/alunoController.php';
 require_once '../src/connection/conexao.php';
 require_once '../src/repository/alunoRepository.php';
+require_once '../src/validation/alunoValidator.php';
+
 
 $paginas = [
     '/' => 'inicio',
@@ -23,3 +25,5 @@ if (false === isset($paginas[$rota])) {
 }
 
 echo $paginas[$rota](); // inicio()
+
+

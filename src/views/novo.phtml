@@ -7,13 +7,13 @@
         <form action="" method="POST">
             <div class="d-flex flex-column justify-content-center align-items-center m-auto h-50 w-50 bg-dark rounded">
                 <label for="nome" class="text-light">Nome: </label>
-                <input name="valor_nome" id="nome" type="text" class="form-control bg-light text-start w-75" placeholder="Exemplo: André" required>
+                <input name="valor_nome" id="nome" type="text" class="form-control bg-light text-start w-75" placeholder="Exemplo: André" required value="<?php echo $_POST['nome'] ?? ''?>">
         
                 <label for="matricula" class="text-light mt-3">Matricula: </label>
-                <input name="valor_matricula" id="matricula" type="number" class="form-control bg-light text-start w-75" placeholder="Exemplo: 99" required>
+                <input name="valor_matricula" id="matricula" type="number" class="form-control bg-light text-start w-75" placeholder="Exemplo: 99" required value="<?php echo $_POST['matricula'] ?? ''?>">
         
                 <label for="cidade" class="text-light mt-3">Cidade: </label>
-                <input name="valor_cidade" id="cidade" type="text" class="form-control bg-light text-start w-75" placeholder="Exemplo: Fortaleza" required>
+                <input name="valor_cidade" id="cidade" type="text" class="form-control bg-light text-start w-75" placeholder="Exemplo: Fortaleza" required value="<?php echo $_POST['nome'] ?? ''?>">
     
                 <input name="submeter" type="submit" class="btn btn-outline-success text-light mt-3 w-75" placeholder="Enviar">
             </div>

@@ -9,19 +9,11 @@ function buscarAlunos() : iterable
     return $alunos; 
 } 
 
-function novoAluno() : void
+function novoAluno(string $nome, string $matricula, string $cidade) : void
 {
-    if(false === empty($_POST)){
-        $nome = $_POST['valor_nome'];
-        $matricula = $_POST['valor_matricula'];
-        $cidade = $_POST['valor_cidade'];
-
-        $sql = "INSERT INTO alunos (nome, matricula, cidade) VALUES (?,?,?)";
-        $query = abrirConexao()->prepare($sql);
-        $query->execute([$nome, $matricula, $cidade]);
-
-        header('location: /listar');
-    }
+    $sql = "INSERT INTO alunos (nome, matricula, cidade) VALUES (?,?,?)";
+    $query = abrirConexao()->prepare($sql);
+    $query->execute([$nome, $matricula, $cidade]);
 }
 
 function buscarUmAluno($id) : iterable
@@ -30,7 +22,13 @@ function buscarUmAluno($id) : iterable
     $aluno = abrirConexao()->query($sql);
     return $aluno->fetch(PDO::FETCH_ASSOC);
 }
+function atualizarAluno(string $nome, string $matricula, string $cidade, string $id): void
+{
 
+    $sql = "UPDATE alunos SET nome=?, matricula=?, cidade=? WHERE id=?";
+    $query = abrirConexao()->prepare($sql);
+    $query->execute([$nome, $matricula, $cidade,$id]);
+}
 function excluirAluno(string $id) : void
 {
     $sql = "DELETE FROM alunos WHERE idalunos='{$id}'";
