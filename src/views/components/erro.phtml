@@ -1,4 +1,11 @@
-<div class="alert alert-danger">
-    <strong>Ops..</strong>
-    <?php echo $mensagem; ?>
-</div>
+<?php if (isset($_SESSION['erro'])) { ?>        
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Ops..</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <?php echo $_SESSION['erro']; ?>
+    </div>     
+<?php 
+        unset($_SESSION['erro']);
+    }
+?>
+

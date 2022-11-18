@@ -41,8 +41,9 @@
                     <h5 class="modal-title">Atualizar informações do aluno:</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="fechar()"></button>
                 </div>
-                <form action="" method="POST">
+                <form action="editar" method="POST">
                     <div class="modal-body">
+                        <input type="hidden" name="id" value="<?php echo isset($dados[1]["idalunos"]); ?>">
                         <label for="nome">Editar nome: </label>
                         <input class="form-control bg-light mb-2" name="valor_nome" id="nome" type="text" value="<?php echo isset($dados[1]["nome"]) ? $dados[1]["nome"] : "";?>">
                         <label for="matricula">Editar matricula: </label>

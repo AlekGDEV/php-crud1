@@ -22,13 +22,14 @@ function buscarUmAluno($id) : iterable
     $aluno = abrirConexao()->query($sql);
     return $aluno->fetch(PDO::FETCH_ASSOC);
 }
+
 function atualizarAluno(string $nome, string $matricula, string $cidade, string $id): void
 {
-
-    $sql = "UPDATE alunos SET nome=?, matricula=?, cidade=? WHERE id=?";
+    $sql = "UPDATE alunos SET nome=?, matricula=?, cidade=? WHERE idalunos=?";
     $query = abrirConexao()->prepare($sql);
-    $query->execute([$nome, $matricula, $cidade,$id]);
+    $query->execute([$nome, $matricula, $cidade, $id]);
 }
+
 function excluirAluno(string $id) : void
 {
     $sql = "DELETE FROM alunos WHERE idalunos='{$id}'";

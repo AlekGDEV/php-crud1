@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 $rota = explode('?', $_SERVER['REQUEST_URI']);
 $rota = $rota[0];
 
@@ -14,10 +15,12 @@ $paginas = [
     '/' => 'inicio',
     '/listar' => 'listar',
     '/novo' => 'novo',
+    '/editar' => 'editar',
     '/excluir' => 'excluir',
 ];
 
 include '../src/views/menu.phtml';
+include '../src/views/components/erro.phtml';
 
 if (false === isset($paginas[$rota])) {
     include '../src/views/erro404.phtml';
