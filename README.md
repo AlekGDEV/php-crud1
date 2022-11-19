@@ -1,11 +1,11 @@
 ### Para iniciar o servidor:
-\php -S localhost:(porta desejada);
+<code>\php -S localhost:(porta desejada) -t public</code>
 
 ## Criação do banco de dados:
 É somente copiar o conteúdo de alunos.sql e rodar no workbench ou shell do MySQL,
 para que possa realizar a criação da tabela.
 
-Para rodar no seu proprio banco de dados altere as variaveis no arquivo config.php no seu host em "$servidor", nome de usuario em "$usuario", sua senha pessoal em "$senha" e o nome do seu banco/schema em "$banco".
+Para rodar no seu proprio banco de dados altere as variaveis no arquivo conexao.php que está dentro da pasta connection no seu host em "$servidor", nome de usuario em "$usuario", sua senha pessoal em "$senha" e o nome do seu banco/schema em "$banco".
 
 # Adicionando dados:
 Na pagina inicial clique em "novo" e você será redirecionado a página "novo", onde é só inserir os dados de nome, matricula e cidade no formulario e clicar em enviar e automaticamente redirecionará você para a página de listar. Porém existem validações, caso nome tenha menos de 3 caracteres, matricula com menos de 6 digitos, ou cidade com menos de 3 caracteres, será exibido um pop-up de erro e não será adicionado quaisquer dados.
