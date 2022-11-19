@@ -5,10 +5,10 @@ declare(strict_types=1);
 
 function renderizar(string $nomeDoArquivo, array $dados = null)
 { 
-    include "../src/views/components/head.phtml";
-    include "../src/views/$nomeDoArquivo.phtml";
+    include dirname(__DIR__) . "/views/components/head.phtml";
+    include dirname(__DIR__) . "/views/$nomeDoArquivo.phtml";
     $dados;
-    include "../src/views/components/foot.phtml";
+    include dirname(__DIR__) . "/views/components/foot.phtml";
     return $dados;
 }
 
@@ -57,7 +57,6 @@ function novo(): void
         }
     }
     renderizar('novo');
-
 }
 
 function editar(): void
