@@ -17,6 +17,7 @@ $paginas = [
     '/novo' => 'novo',
     '/editar' => 'editar',
     '/excluir' => 'excluir',
+    '/salvar' => 'salvar',
 ];
 
 include dirname(__DIR__) . '/src/views/menu.phtml';

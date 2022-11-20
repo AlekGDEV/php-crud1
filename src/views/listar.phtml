@@ -25,8 +25,9 @@
                                 <td>{$cadaAluno['matricula']}</td>
                                 <td>{$cadaAluno['cidade']}</td>
                                 <td>
-                                    <a href='/listar?id={$id}' class='me-2' ><img src='./assets/editarIcon.png' alt='icone de editar' style='width: 3em; height: 3em;'></a>
-                                    <a onclick='confirmar({$id})'><img src='./assets/excluirIcon.png' alt='icone de excluir' style='width: 2.6em; height: 2.6em;'></a>
+                                    <a href='/listar?id={$id}' class='me-2' ><img src='./assets/img/editarIcon.png' alt='icone de editar' style='width: 3em; height: 3em;'></a>
+                                    <a onclick='confirmar({$id})'><img src='./assets/img/excluirIcon.png' alt='icone de excluir' style='width: 2.6em; height: 2.6em;'></a>
+                                    <a href='/salvar?id={$id}' class='btn btn-outline-primary'>Salvar</a>
                                 </td> 
                             </tr>";
                         }
