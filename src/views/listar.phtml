@@ -1,4 +1,18 @@
-<body>
+    <div class="collapse fixed-top ms-auto me-auto w-25 mt-3" id="collapseExample">
+        <div class="card card-body border border-1 ">
+            <div class="d-flex flex-column gap-2">
+                <h4 class="text-danger">Excluir dados: </h4>
+                <hr>
+                <span class="fw-bold">Após confirmar a alteração não poderá ser desfeita.</span>
+                <hr>
+                <div class="d-flex justify-content-end gap-2">
+                    <input type="hidden" id="capturarAluno">
+                    <button class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#collapseExample">Não, desejo voltar.</button>
+                    <button onclick="confirmar()" class="btn btn-outline-primary">Sim, prossiga.</button>
+                </div>
+            </div>
+        </div>
+    </div>  
 
     <div class="container-fluid w-100 mt-5 text-center">
         <h1>Listar Tabela</h1>
@@ -26,7 +40,7 @@
                                 <td>{$cadaAluno['cidade']}</td>
                                 <td>
                                     <a href='/listar?id={$id}' class='me-2' ><img src='./assets/img/editarIcon.png' alt='icone de editar' style='width: 3em; height: 3em;'></a>
-                                    <a onclick='confirmar({$id})' class='me-2'><img src='./assets/img/excluirIcon.png' alt='icone de excluir' style='width: 2.6em; height: 2.6em;'></a>
+                                    <a onclick='capturarID($id)' class='me-2'><img src='./assets/img/excluirIcon.png' alt='icone de excluir' style='width: 2.6em; height: 2.6em;'></a>
                                     <a href='/salvar?id={$id}' class='pt-2'><img src='./assets/img/salvarIcon.png' alt='icone de salvar' style='width: 2.6em; height: 2.6em;'></a>
                                 </td> 
                             </tr>";
@@ -61,11 +75,15 @@
             </div>
         </div>
     </div>
+
     <script>
-        function confirmar(id){
-            if(confirm('Tem certeza?')){
-                location.href = `/excluir?id=${id}`
-            }
+        function capturarID(id){
+            capturarAluno.value = id;
+            const collapseElementList = document.querySelectorAll('.collapse')
+            const collapseList = [...collapseElementList].map(collapseEl => new bootstrap.Collapse(collapseEl))
+        }
+        function confirmar(){ 
+            id = capturarAluno.value;
+            location.href = `/excluir?id=${id}`
         }
     </script>
-</body>

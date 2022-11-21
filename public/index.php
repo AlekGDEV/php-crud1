@@ -28,4 +28,4 @@ if (false === isset($paginas[$rota])) {
     exit;
 } 
 
-echo $paginas[$rota]();// inicio()
+echo $paginas[$rota]();
